@@ -244,3 +244,26 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 })();
 
+(function () {
+  const img = document.getElementById("projectPreview");
+  if (!img) return;
+
+  const sources = [
+    "https://s0.wp.com/mshots/v1/https%3A%2F%2Freaplaylist.vercel.app?w=1200&cb=" + Date.now(),
+    "https://mini.s-shot.ru/1200x750/PNG/1200/Z100/?https://reaplaylist.vercel.app",
+    "reaplaylist.png"
+  ];
+
+  let index = 0;
+
+  function loadNext() {
+    if (index >= sources.length) return;
+    img.src = sources[index];
+    index++;
+  }
+
+  img.onerror = loadNext;
+
+  loadNext();
+})();
+
