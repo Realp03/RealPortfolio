@@ -240,6 +240,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 220);
     };
 
-    setInterval(step, 1200);
+    setInterval(step, 3000);
   });
 })();
+
