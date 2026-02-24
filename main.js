@@ -211,3 +211,35 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+(function () {
+  const rotators = Array.from(document.querySelectorAll(".skill-rotator"));
+  if (!rotators.length) return;
+
+  rotators.forEach((el) => {
+    const items = String(el.dataset.items || "")
+      .split("|")
+      .map((s) => s.trim())
+      .filter(Boolean);
+
+    if (!items.length) return;
+
+    let i = 0;
+    el.textContent = items[i];
+    el.classList.add("is-in");
+
+    const step = () => {
+      el.classList.remove("is-in");
+      el.classList.add("is-out");
+
+      setTimeout(() => {
+        i = (i + 1) % items.length;
+        el.textContent = items[i];
+        el.classList.remove("is-out");
+        el.classList.add("is-in");
+      }, 220);
+    };
+
+    setInterval(step, 1200);
+  });
+})();
