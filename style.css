@@ -699,3 +699,21 @@ h2{
   }
 }
 
+.skill-rotator{
+  display:inline-block;
+  min-height:20px;
+  white-space:nowrap;
+  opacity:.95;
+  transform:translateY(0);
+  transition:opacity .25s ease, transform .25s ease;
+}
+
+.skill-rotator.is-out{
+  opacity:0;
+  transform:translateY(6px);
+}
+
+.skill-rotator.is-in{
+  opacity:1;
+  transform:translateY(0);
+}
