@@ -21,7 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const gallery = document.getElementById("gallery");
   const scrollBtns = document.querySelectorAll("[data-gallery-dir]");
-
   scrollBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
       if (!gallery) return;
@@ -38,97 +37,127 @@ document.addEventListener("DOMContentLoaded", () => {
   const chatInput = document.getElementById("chatInput");
   const chatMsgs = document.getElementById("chatMsgs");
 
-  let awaitingJokePunchline = false;
-  let awaitingCrushline = false;
+  const chatKey = "realp03_ai_chat_history_v1";
+  const history = [];
 
-  const replies = {
-    hi: "Hello! Thank you for visiting my Portfolio Website. Feel free to explore and learn more about me.",
-    love: "I appreciate the kindness 😄 but I’m here to share my professional journey and skills.",
-    yown: "AHHAHAHAHAHAHA KUPAL",
-    haha: "G MU!!!!!!!",
-    relationship: "I prefer to keep my personal life private. Let’s focus on my IT journey and goals!",
-    skills: "My technical skills include HTML, CSS, JavaScript, VB.Net, PHP, Java, and hardware troubleshooting.",
-    contact: "You can contact me through the email or Facebook icon below.",
-    future: "I plan to become a System or Network Administrator in the future.",
-    hobby: "I enjoy playing online games and exploring new technologies.",
-    default: "You can ask me about my skills, hobbies, future plans, or contact information.",
-  };
+  function escapeHtml(s) {
+    return String(s || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
 
   function addMsg(role, text) {
     if (!chatMsgs) return;
-    const div = document.createElement("div");
-    div.className = "msg " + role;
-    div.textContent = text;
-    chatMsgs.appendChild(div);
+    const wrap = document.createElement("div");
+    wrap.className = role === "me" ? "msg me" : "msg bot";
+    wrap.innerHTML = escapeHtml(text).replace(/\n/g, "<br>");
+    chatMsgs.appendChild(wrap);
     chatMsgs.scrollTop = chatMsgs.scrollHeight;
+  }
+
+  function typing(on) {
+    if (!chatMsgs) return;
+    const id = "aiTyping";
+    const old = document.getElementById(id);
+    if (on) {
+      if (old) return;
+      const div = document.createElement("div");
+      div.id = id;
+      div.className = "msg bot";
+      div.textContent = "Typing…";
+      chatMsgs.appendChild(div);
+      chatMsgs.scrollTop = chatMsgs.scrollHeight;
+    } else {
+      if (old) old.remove();
+    }
+  }
+
+  function loadChat() {
+    try {
+      const raw = localStorage.getItem(chatKey);
+      const parsed = raw ? JSON.parse(raw) : [];
+      if (Array.isArray(parsed)) {
+        parsed.slice(-30).forEach((m) => {
+          if (!m || typeof m !== "object") return;
+          addMsg(m.role === "user" ? "me" : "bot", m.text || "");
+          history.push({ role: m.role, text: m.text || "" });
+        });
+      }
+    } catch {}
+  }
+
+  function saveChat() {
+    try {
+      localStorage.setItem(chatKey, JSON.stringify(history.slice(-30)));
+    } catch {}
+  }
+
+  async function askAI(message) {
+    const payloadHistory = history
+      .slice(-10)
+      .map((m) => ({
+        role: m.role === "model" ? "model" : "user",
+        text: String(m.text || "").slice(0, 1200),
+      }));
+
+    const res = await fetch("/api/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message, history: payloadHistory }),
+    });
+
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok) throw new Error((data && (data.error || data.detail)) || "Request failed");
+    return String(data.reply || "").trim();
   }
 
   if (chatFab && chatBox) chatFab.onclick = () => chatBox.classList.remove("hidden");
   if (chatClose && chatBox) chatClose.onclick = () => chatBox.classList.add("hidden");
 
-  addMsg("bot", "Hi! I'm Mark Daryl Pineda. Ask me about my skills, hobbies, or future plans.");
+  if (chatMsgs && chatForm && chatInput) {
+    loadChat();
 
-  if (chatForm) {
-    chatForm.addEventListener("submit", (e) => {
+    if (history.length === 0) {
+      addMsg("bot", "Hi! I’m Ask Mark AI. Ask me about my projects, skills, or contact.");
+      history.push({ role: "model", text: "Hi! I’m Ask Mark AI. Ask me about my projects, skills, or contact." });
+      saveChat();
+    }
+
+    chatForm.addEventListener("submit", async (e) => {
       e.preventDefault();
 
-      const raw = chatInput?.value.trim() || "";
-      const text = raw.toLowerCase();
-      if (!text) return;
+      const raw = (chatInput.value || "").trim();
+      if (!raw) return;
 
       addMsg("me", raw);
-      if (chatInput) chatInput.value = "";
+      history.push({ role: "user", text: raw });
+      saveChat();
 
-      let reply = replies.default;
+      chatInput.value = "";
+      chatInput.focus();
 
-      if (text.includes("joke") || text.includes("patawa")) {
-        awaitingJokePunchline = true;
-        reply = "Sige, Ano ang Pambansang laro ng Pilipinas";
-      } else if (awaitingJokePunchline && (text === "ano" || text === "ano?")) {
-        awaitingJokePunchline = false;
-        reply = "Edi, Scatter AHHAHAHAHAHA TANGINA MO!!!";
+      try {
+        typing(true);
+        const reply = await askAI(raw);
+        typing(false);
+
+        const finalReply = reply || "AI is temporarily unavailable. Please try again.";
+        addMsg("bot", finalReply);
+        history.push({ role: "model", text: finalReply });
+        saveChat();
+      } catch {
+        typing(false);
+        addMsg("bot", "AI is temporarily unavailable. Please try again.");
       }
-
-      if (text.includes("crush") || text.includes("mahal")) {
-        awaitingCrushline = true;
-        reply = "Meron po hehe";
-      } else if (awaitingCrushline && (text === "sino" || text === "sino?" || text === "who" || text === "who?")) {
-        awaitingCrushline = false;
-        reply = "Cybelle Mia ♡♡♡";
-      } else if (
-        text.startsWith("hi") ||
-        text.startsWith("hello") ||
-        text.includes("hi po") ||
-        text.includes("hello po") ||
-        text.includes("hey")
-      ) {
-        reply = replies.hi;
-      } else if (text.includes("love you")) {
-        reply = replies.love;
-      } else if (text.includes("single") || text.includes("ex") || text.includes("relationship")) {
-        reply = replies.relationship;
-      } else if (text.includes("skill")) {
-        reply = replies.skills;
-      } else if (text.includes("yown")) {
-        reply = replies.yown;
-      } else if (text.includes("contact") || text.includes("email") || text.includes("facebook") || text.includes("fb")) {
-        reply = replies.contact;
-      } else if (text.includes("future") || text.includes("plan")) {
-        reply = replies.future;
-      } else if (text.includes("suntukan") || text.includes("kantutan")) {
-        reply = replies.haha;
-      } else if (text.includes("hobby") || text.includes("game")) {
-        reply = replies.hobby;
-      }
-
-      setTimeout(() => addMsg("bot", reply), 500);
     });
   }
 
-  // CERTIFICATE: VIEW IN WEBSITE (MODAL) + DIRECT DOWNLOAD (NO REDIRECT)
   const modal = document.getElementById("certModal");
   if (modal) {
-    const preview = document.getElementById("certPreview"); // iframe
+    const preview = document.getElementById("certPreview");
     const titleEl = document.getElementById("certModalTitle");
     const downloadBtn = document.getElementById("certDownload");
     const closeBtn = document.getElementById("certClose");
@@ -167,7 +196,6 @@ document.addEventListener("DOMContentLoaded", () => {
           downloadBtn.setAttribute("download", safeName);
         }
       } catch (err) {
-        // fallback if fetch blocked
         if (preview) preview.src = pdf;
         if (downloadBtn) {
           const safeName = (title || "certificate").replace(/[^\w\-]+/g, "_") + ".pdf";
@@ -266,4 +294,15 @@ document.addEventListener("DOMContentLoaded", () => {
   loadNext();
 })();
 
-
+const g = document.querySelector('img[alt="Gallereal Website Preview"]');
+if (g) {
+  const t = setTimeout(() => {
+    if (!g.complete || g.naturalWidth === 0) g.src = "gallereal.png";
+  }, 4000);
+  g.onload = () => clearTimeout(t);
+  g.onerror = () => {
+    clearTimeout(t);
+    g.onerror = null;
+    g.src = "gallereal.png";
+  };
+}
