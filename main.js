@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const RASA_URL = "https://anderson-mat-ronald-importance.trycloudflare.com";
   const items = document.querySelectorAll(".reveal");
   items.forEach((el, i) => {
     el.style.setProperty("--delay", `${0.12 * i}s`);
@@ -36,6 +37,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const chatForm = document.getElementById("chatForm");
   const chatInput = document.getElementById("chatInput");
   const chatMsgs = document.getElementById("chatMsgs");
+
+  const botDot = document.getElementById("botDot");
+  const botLabel = document.getElementById("botLabel");
 
   const chatKey = "realp03_ai_chat_history_v1";
   const history = [];
@@ -95,23 +99,58 @@ document.addEventListener("DOMContentLoaded", () => {
     } catch {}
   }
 
+  function setOnlineUI(online) {
+    if (botDot) {
+      botDot.classList.toggle("online", !!online);
+      botDot.classList.toggle("offline", !online);
+    }
+    if (botLabel) botLabel.textContent = online ? "Online" : "Offline";
+  }
+
+  async function checkBotStatus() {
+    const controller = new AbortController();
+    const t = setTimeout(() => controller.abort(), 2500);
+
+    try {
+      const res = await fetch(`${RASA_URL}/version`, { signal: controller.signal, cache: "no-store" });
+      clearTimeout(t);
+      setOnlineUI(res.ok);
+      return res.ok;
+    } catch {
+      clearTimeout(t);
+      setOnlineUI(false);
+      return false;
+    }
+  }
+
   async function askAI(message) {
-    const payloadHistory = history
-      .slice(-10)
-      .map((m) => ({
-        role: m.role === "model" ? "model" : "user",
-        text: String(m.text || "").slice(0, 1200),
-      }));
+    const controller = new AbortController();
+    const t = setTimeout(() => controller.abort(), 45000);
 
-    const res = await fetch("/api/chat", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ message, history: payloadHistory }),
-    });
+    try {
+      const res = await fetch(`${RASA_URL}/webhooks/rest/webhook`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        signal: controller.signal,
+        body: JSON.stringify({
+          sender: "realp03_portfolio_user",
+          message: String(message || "").slice(0, 2000),
+        }),
+      });
 
-    const data = await res.json().catch(() => ({}));
-    if (!res.ok) throw new Error((data && (data.error || data.detail)) || "Request failed");
-    return String(data.reply || "").trim();
+      const data = await res.json().catch(() => []);
+      if (!res.ok) throw new Error("Request failed");
+
+      const texts = Array.isArray(data)
+        ? data
+            .map((m) => (m && typeof m.text === "string" ? m.text : ""))
+            .filter(Boolean)
+        : [];
+
+      return (texts.join("\n") || "").trim();
+    } finally {
+      clearTimeout(t);
+    }
   }
 
   if (chatFab && chatBox) chatFab.onclick = () => chatBox.classList.remove("hidden");
@@ -121,10 +160,14 @@ document.addEventListener("DOMContentLoaded", () => {
     loadChat();
 
     if (history.length === 0) {
-      addMsg("bot", "Hi! I’m Ask Mark AI. Ask me about my projects, skills, or contact.");
-      history.push({ role: "model", text: "Hi! I’m Ask Mark AI. Ask me about my projects, skills, or contact." });
+      const hi = "Hi! I’m Ask Mark AI. Ask me about my projects, skills, or contact.";
+      addMsg("bot", hi);
+      history.push({ role: "model", text: hi });
       saveChat();
     }
+
+    checkBotStatus();
+    setInterval(checkBotStatus, 5000);
 
     chatForm.addEventListener("submit", async (e) => {
       e.preventDefault();
@@ -144,13 +187,15 @@ document.addEventListener("DOMContentLoaded", () => {
         const reply = await askAI(raw);
         typing(false);
 
-        const finalReply = reply || "AI is temporarily unavailable. Please try again.";
+        const finalReply = reply || "I didn't understand that.";
         addMsg("bot", finalReply);
         history.push({ role: "model", text: finalReply });
         saveChat();
+        checkBotStatus();
       } catch {
         typing(false);
-        addMsg("bot", "AI is temporarily unavailable. Please try again.");
+        const ok = await checkBotStatus();
+        addMsg("bot", ok ? "love medyo busy yung AI. Try ulit after a few seconds." : "Mark Daryl is offline right now. Try again later.");
       }
     });
   }
@@ -195,7 +240,7 @@ document.addEventListener("DOMContentLoaded", () => {
           downloadBtn.href = currentBlobUrl;
           downloadBtn.setAttribute("download", safeName);
         }
-      } catch (err) {
+      } catch {
         if (preview) preview.src = pdf;
         if (downloadBtn) {
           const safeName = (title || "certificate").replace(/[^\w\-]+/g, "_") + ".pdf";
@@ -278,7 +323,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const sources = [
     "https://s0.wp.com/mshots/v1/https%3A%2F%2Freaplaylist.vercel.app?w=1200&cb=" + Date.now(),
-    "reaplaylist.png"
+    "reaplaylist.png",
   ];
 
   let index = 0;

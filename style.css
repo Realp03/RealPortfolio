@@ -9,6 +9,84 @@
   --blue2:#60a5fa;
 }
 
+.bot-status{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:13px;
+  opacity:.9;
+}
+.dot{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  display:inline-block;
+  background:#9aa4b2;
+}
+.dot.online{ background:#22c55e; }
+.dot.offline{ background:#9aa4b2; }
+
+.chatHeader{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.chatUser{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.avatarWrap{
+  position:relative;
+  width:42px;
+  height:42px;
+}
+
+.chatAvatar{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  object-fit:cover;
+  border:2px solid #fff;
+}
+
+.statusDot{
+  position:absolute;
+  bottom:2px;
+  right:2px;
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  border:2px solid #fff;
+  background:#9aa4b2;
+}
+
+.statusDot.online{
+  background:#22c55e;
+}
+
+.statusDot.offline{
+  background:#9aa4b2;
+}
+
+.chatUserInfo{
+  display:flex;
+  flex-direction:column;
+  line-height:1.1;
+}
+
+.chatName{
+  font-weight:600;
+  font-size:14px;
+}
+
+.chatStatus{
+  font-size:12px;
+  opacity:.8;
+}
+
 /* =========================
    GLOBAL
 ========================= */
