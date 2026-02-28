@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const RASA_URL = " https://eddie-reliability-kids-beaver.trycloudflare.com";
+  const AI_URL = "https://miles-debian-concrete-shipped.trycloudflare.com";
   const items = document.querySelectorAll(".reveal");
   items.forEach((el, i) => {
     el.style.setProperty("--delay", `${0.12 * i}s`);
@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const t = setTimeout(() => controller.abort(), 2500);
 
     try {
-      const res = await fetch(`${RASA_URL}/version`, { signal: controller.signal, cache: "no-store" });
+      const res = await fetch(`${AI_URL}/health`, { signal: controller.signal, cache: "no-store" });
       clearTimeout(t);
       setOnlineUI(res.ok);
       return res.ok;
@@ -128,26 +128,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const t = setTimeout(() => controller.abort(), 45000);
 
     try {
-      const res = await fetch(`${RASA_URL}/webhooks/rest/webhook`, {
+      const res = await fetch(`${AI_URL}/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         signal: controller.signal,
         body: JSON.stringify({
-          sender: "realp03_portfolio_user",
           message: String(message || "").slice(0, 2000),
         }),
       });
 
-      const data = await res.json().catch(() => []);
+      const data = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error("Request failed");
 
-      const texts = Array.isArray(data)
-        ? data
-            .map((m) => (m && typeof m.text === "string" ? m.text : ""))
-            .filter(Boolean)
-        : [];
-
-      return (texts.join("\n") || "").trim();
+      const reply = data && typeof data.reply === "string" ? data.reply : "";
+      return String(reply || "").trim();
     } finally {
       clearTimeout(t);
     }
@@ -160,7 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
     loadChat();
 
     if (history.length === 0) {
-      const hi = "Hi! I’m Ask Mark AI. Ask me about my projects, skills, or contact.";
+      const hi = "Hi! I’m AskMark AI. Ask me about my projects, skills, or contact info.";
       addMsg("bot", hi);
       history.push({ role: "model", text: hi });
       saveChat();
@@ -195,7 +189,7 @@ document.addEventListener("DOMContentLoaded", () => {
       } catch {
         typing(false);
         const ok = await checkBotStatus();
-        addMsg("bot", ok ? "love medyo busy yung AI. Try ulit after a few seconds." : "Mark Daryl is offline right now. Try again later.");
+        addMsg("bot", ok ? "AI is busy right now. Please try again in a few seconds." : "AI is offline right now. Try again later.");
       }
     });
   }
@@ -350,16 +344,4 @@ if (g) {
     g.onerror = null;
     g.src = "gallereal.png";
   };
-
 }
-
-
-
-
-
-
-
-
-
-
-
