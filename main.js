@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const AI_URL = "https://postage-blvd-etc-sports.trycloudflare.com";
+  const AI_URL = "https://pavilion-specially-henry-grid.trycloudflare.com";
   const items = document.querySelectorAll(".reveal");
   items.forEach((el, i) => {
     el.style.setProperty("--delay", `${0.12 * i}s`);
@@ -345,5 +345,6 @@ if (g) {
     g.src = "gallereal.png";
   };
 }
+
 
 
