@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const AI_URL = "https://jeans-our-sand-cast.trycloudflare.com";
+  const AI_URL = "https://item-goat-recipes-timothy.trycloudflare.com";
   const items = document.querySelectorAll(".reveal");
   items.forEach((el, i) => {
     el.style.setProperty("--delay", `${0.12 * i}s`);
@@ -345,6 +345,7 @@ if (g) {
     g.src = "gallereal.png";
   };
 }
+
 
 
 
