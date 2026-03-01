@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const AI_URL = "https://wage-pockets-uploaded-depends.trycloudflare.com";
+  const AI_URL = "https://deny-scanner-contributing-joke.trycloudflare.com";
   const items = document.querySelectorAll(".reveal");
   items.forEach((el, i) => {
     el.style.setProperty("--delay", `${0.12 * i}s`);
@@ -345,6 +345,7 @@ if (g) {
     g.src = "gallereal.png";
   };
 }
+
 
 
 
