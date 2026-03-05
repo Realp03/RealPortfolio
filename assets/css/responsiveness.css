@@ -1,0 +1,20 @@
+@media (max-width: 768px){
+  .scroll-btn.left,
+  .scroll-btn.right{ display:none; }
+
+  .gallery{ padding: 10px; }
+}
+
+@media (max-width: 600px){
+  .header{
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-pic{
+    width:90px;
+    height:90px;
+  }
+
+  .card{ padding:20px; }
+}

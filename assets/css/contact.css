@@ -1,0 +1,29 @@
+.contact{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.email-icon{
+  width:44px;
+  height:44px;
+  border-radius:12px;
+  padding:8px;
+  background: rgba(255,255,255,.06);
+  border:1px solid rgba(96,165,250,.22);
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  cursor:pointer;
+}
+
+.email-icon:hover{
+  transform: translateY(-1px) scale(1.03);
+  border-color: rgba(96,165,250,.55);
+  box-shadow: 0 12px 26px rgba(0,0,0,.25);
+}
+
+.footer-note{
+  margin-top:14px;
+  color: rgba(184,208,255,.85);
+  font-size: 13px;
+}
