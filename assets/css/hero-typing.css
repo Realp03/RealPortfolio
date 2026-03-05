@@ -1,0 +1,41 @@
+.heroIntro{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.heroTitle{
+  margin:0;
+  font-size:clamp(22px,3.2vw,44px);
+  line-height:1.08;
+  letter-spacing:.2px;
+  min-height:1.2em;
+}
+
+.heroSub{
+  margin:0;
+  margin-top:2px;
+  max-width:52ch;
+  opacity:.92;
+}
+
+#typingLine{
+  display:inline-block;
+  white-space:nowrap;
+}
+
+.typeCursor::after{
+  content:"|";
+  margin-left:8px;
+  opacity:1;
+  animation:typeBlink 1s infinite;
+}
+
+@keyframes typeBlink{
+  50%{opacity:0;}
+}
+
+@media (max-width:720px){
+  .heroSub{max-width:44ch;}
+  .heroTitle{min-height:1.25em;}
+}
