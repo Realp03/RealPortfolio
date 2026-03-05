@@ -4,18 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Realp03 Portfolio</title>
-  <link rel="icon" type="image/png" href="Favicon.png">
-  <link rel="stylesheet" href="style.css" />
-  <script src="main.js" defer></script>
+
+  <link rel="icon" type="image/png" href="./assets/icons/favicon.png" />
+  <link rel="stylesheet" href="./assets/css/tokens.css" />
+  <link rel="stylesheet" href="./assets/css/base.css" />
+  <link rel="stylesheet" href="./assets/css/layout-card.css" />
+  <link rel="stylesheet" href="./assets/css/project.css" />
+  <link rel="stylesheet" href="./assets/css/featured-project.css" />
+  <link rel="stylesheet" href="./assets/css/contact.css" />
+  <link rel="stylesheet" href="./assets/css/chat.css" />
+  <link rel="stylesheet" href="./assets/css/certificates.css" />
+  <link rel="stylesheet" href="./assets/css/modal.css" />
+  <link rel="stylesheet" href="./assets/css/responsiveness.css" />
+
+  <script src="./main.js" defer></script>
 </head>
 
 <body>
-
   <div class="container">
     <div class="card">
-
       <div class="header">
-        <img class="profile-pic" src="Pogi.jpg" alt="My Photo" />
+        <img class="profile-pic" src="./assets/img/Pogi.jpg" alt="My Photo" />
 
         <div>
           <h1>Welcome to My Portfolio</h1>
@@ -25,8 +34,8 @@
           </p>
         </div>
 
-        <a href="about.html" class="about-btn">About Me</a>
-        <a class="about-btn" href="Mark-Daryl-Pineda-CV.pdf" download>Download CV</a>
+        <a href="./pages/about.html" class="about-btn">About Me</a>
+        <a class="about-btn" href="./docs/Mark-Daryl-Pineda-CV.pdf" download>Download CV</a>
       </div>
 
       <div class="section" id="tech-skills">
@@ -36,30 +45,21 @@
           <li>
             <div class="project">
               Frontend Programming
-              <span
-                class="skill-rotator"
-                data-items="CSS|HTML|JavaScript|React|Tailwind|Vite"
-              ></span>
+              <span class="skill-rotator" data-items="CSS|HTML|JavaScript|React|Tailwind CSS"></span>
             </div>
           </li>
 
           <li>
             <div class="project">
               Backend Programming
-              <span
-                class="skill-rotator"
-                data-items="PHP|VB.Net|Java|MySQL"
-              ></span>
+              <span class="skill-rotator" data-items="PHP|VB.Net|Java|MySQL"></span>
             </div>
           </li>
 
           <li>
             <div class="project">
               Hardware Skills
-              <span
-                class="skill-rotator"
-                data-items="Hardware Troubleshooting|System Installation"
-              ></span>
+              <span class="skill-rotator" data-items="Hardware Troubleshooting|System Installation"></span>
             </div>
           </li>
         </ul>
@@ -103,7 +103,7 @@
           <button
             class="cert-card"
             data-title="Introduction to Cybersecurity"
-            data-pdf="Introduction_to_Cybersecurity_certificate_pinedamarkdaryl-gmail-com_fe173ab2-cafc-4dbf-b2c1-2dede27c746c (1).pdf"
+            data-pdf="./docs/certs/Introduction_to_Cybersecurity_certificate_pinedamarkdaryl-gmail-com_fe173ab2-cafc-4dbf-b2c1-2dede27c746c (1).pdf"
           >
             <div class="cert-meta">
               <span class="cert-title">Introduction to Cybersecurity</span>
@@ -111,21 +111,21 @@
             </div>
           </button>
 
-           <button
+          <button
             class="cert-card"
             data-title="CSS Essentials"
-            data-pdf=" CSS_Essentials_certificate_pinedamarkdaryl-gmail-com_ea032f1b-c684-430b-91c5-4badcbadc655.pdf">
+            data-pdf="./docs/certs/CSS_Essentials_certificate_pinedamarkdaryl-gmail-com_ea032f1b-c684-430b-91c5-4badcbadc655.pdf"
+          >
             <div class="cert-meta">
-              
               <span class="cert-title">CSS Essentials</span>
               <span class="cert-sub">Click to view</span>
             </div>
           </button>
-         
+
           <button
             class="cert-card"
             data-title="Operating Systems Basics"
-            data-pdf="Operating_Systems_Basics_certificate_pinedamarkdaryl-gmail-com_6aeca8e9-7fea-4c6a-a597-5478b34ef25b.pdf"
+            data-pdf="./docs/certs/Operating_Systems_Basics_certificate_pinedamarkdaryl-gmail-com_6aeca8e9-7fea-4c6a-a597-5478b34ef25b.pdf"
           >
             <div class="cert-meta">
               <span class="cert-title">Operating Systems Basics</span>
@@ -134,14 +134,14 @@
           </button>
         </div>
 
-        <hr class="cert-divider">
+        <hr class="cert-divider" />
 
         <h3 class="cert-group-title">Webinars / Seminars Certificates</h3>
         <div class="cert-grid">
           <button
             class="cert-card"
             data-title="FROM IDEA TO APP: DEMYSTIFYING WEB AND DIGITAL MARKETING"
-            data-pdf="Mark_Daryl_Pineda.pdf"
+            data-pdf="./docs/certs/Mark_Daryl_Pineda.pdf"
           >
             <div class="cert-meta">
               <span class="cert-title">FROM IDEA TO APP: DEMYSTIFYING WEB AND DIGITAL MARKETING</span>
@@ -152,10 +152,10 @@
           <button
             class="cert-card"
             data-title="Empowerment Program for Women in Tech"
-            data-pdf="She++Certificate.pdf"
+            data-pdf="./docs/certs/She++Certificate.pdf"
           >
             <div class="cert-meta">
-              <span class="cert-title">SHE++:Empowerment Program for Women in Tech</span>
+              <span class="cert-title">SHE++: Empowerment Program for Women in Tech</span>
               <span class="cert-sub">Click to view</span>
             </div>
           </button>
@@ -166,28 +166,21 @@
         <h2>Featured Project</h2>
 
         <div class="product-grid">
-
-          <a
-            class="product-card"
-            href="https://reaplaylist.vercel.app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a class="product-card" href="https://reaplaylist.vercel.app" target="_blank" rel="noopener noreferrer">
             <div class="product-img-wrap">
               <img
-                id="projectPreview"
-                alt="ReaPlaylist Website Preview"
-                class="product-img"
-                loading="lazy"
-              />
+  src="https://mini.s-shot.ru/1200x750/PNG/1200/Z100/?https://reaplaylist.vercel.app"
+  onerror="this.onerror=null;this.src='./assets/img/reaplaylist.png';"
+  alt="ReaPlaylist Website Preview"
+  class="product-img"
+  loading="lazy"
+/>
               <span class="product-badge">Live</span>
             </div>
 
             <div class="product-info">
               <h3 class="product-title">ReaPlaylist</h3>
-              <p class="product-desc">
-                Realp03 Personal playlist Website that motivated him in life.
-              </p>
+              <p class="product-desc">Realp03 personal playlist website that motivates him in life.</p>
 
               <div class="product-meta">
                 <span class="product-tag">React</span>
@@ -196,27 +189,22 @@
               </div>
 
               <div class="product-cta">
-                <span class="product-link">View Website →</span>
+                <span class="product-link">Listen Now →</span>
               </div>
             </div>
           </a>
 
-          <a
-  class="product-card"
-  href="https://gallereal.42web.io/gallery.php"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  <div class="product-img-wrap">
-    <img
-    src="https://mini.s-shot.ru/1200x750/PNG/1200/Z100/?https://gallereal.42web.io/gallery.php"
-      onerror="this.onerror=null;this.src='gallereal.png';"
-      alt="Gallereal Website Preview"
-      class="product-img"
-      loading="lazy"
-    />
-    <span class="product-badge">Live</span>
-  </div>
+          <a class="product-card" href="https://gallereal.42web.io/gallery.php" target="_blank" rel="noopener noreferrer">
+            <div class="product-img-wrap">
+              <img
+                src="https://mini.s-shot.ru/1200x750/PNG/1200/Z100/?https://gallereal.42web.io/gallery.php"
+                onerror="this.onerror=null;this.src='./assets/img/gallereal.png';"
+                alt="Gallereal Website Preview"
+                class="product-img"
+                loading="lazy"
+              />
+              <span class="product-badge">Live</span>
+            </div>
 
             <div class="product-info">
               <h3 class="product-title">Gallereal</h3>
@@ -236,16 +224,11 @@
             </div>
           </a>
 
-          <a
-            class="product-card"
-            href="https://realsumebuilder.vercel.app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a class="product-card" href="https://realsumebuilder.vercel.app" target="_blank" rel="noopener noreferrer">
             <div class="product-img-wrap">
               <img
-                src="realsumebuilder.png"
-                onerror="this.onerror=null;this.src='Resume.png';"
+                src="./assets/img/realsumebuilder.png"
+                onerror="this.onerror=null;this.src='./assets/img/Resume.png';"
                 alt="Resume Builder Website Preview"
                 class="product-img"
                 loading="lazy"
@@ -271,6 +254,40 @@
             </div>
           </a>
 
+
+          <a 
+  class="product-card" 
+  href="https://guess-the-impostor-game.vercel.app/" 
+  target="_blank" 
+  rel="noopener noreferrer"
+>
+  <div class="product-img-wrap">
+    <img
+  src="./assets/img/guessgame.png"
+  alt="Guess The Impostor Game Preview"
+  class="product-img"
+  loading="lazy"
+/>
+    <span class="product-badge">Live</span>
+  </div>
+
+  <div class="product-info">
+    <h3 class="product-title">Guess The Impostor</h3>
+    <p class="product-desc">
+      A one-device party game where players describe a secret word while uncovering the impostor.
+    </p>
+
+    <div class="product-meta">
+      <span class="product-tag">React</span>
+      <span class="product-tag">Vite</span>
+      <span class="product-tag">Mobile APK</span>
+    </div>
+
+    <div class="product-cta">
+      <span class="product-link">Play Now →</span>
+    </div>
+  </div>
+</a>
         </div>
       </div>
 
@@ -278,23 +295,18 @@
         <h2>Contact Me</h2>
         <div class="contact">
           <a href="mailto:pinedamarkdaryl@gmail.com">
-            <img class="email-icon" src="email.png" alt="Email Me" />
+            <img class="email-icon" src="./assets/icons/email.png" alt="Email Me" />
           </a>
 
-          <a href="https://web.facebook.com/TheReal2004"
-             target="_blank"
-             rel="noopener noreferrer">
-            <img class="email-icon" src="FB.png" alt="Facebook" />
+          <a href="https://web.facebook.com/TheReal2004" target="_blank" rel="noopener noreferrer">
+            <img class="email-icon" src="./assets/icons/FB.png" alt="Facebook" />
           </a>
 
-          <a href="https://www.instagram.com/realp03/"
-             target="_blank"
-             rel="noopener noreferrer">
-            <img class="email-icon" src="insta.png" alt="Instagram" />
+          <a href="https://www.instagram.com/realp03/" target="_blank" rel="noopener noreferrer">
+            <img class="email-icon" src="./assets/icons/insta.png" alt="Instagram" />
           </a>
         </div>
       </div>
-
     </div>
   </div>
 
@@ -304,7 +316,7 @@
     <div class="chatHeader">
       <div class="chatUser">
         <div class="avatarWrap">
-          <img src="Pogi.jpg" class="chatAvatar" alt="Mark Avatar" />
+          <img src="./assets/img/Pogi.jpg" class="chatAvatar" alt="Mark Avatar" />
           <span id="botDot" class="statusDot offline"></span>
         </div>
         <div class="chatUserInfo">
@@ -336,18 +348,9 @@
       </div>
 
       <div class="cert-modal__content">
-        <iframe
-          id="certPreview"
-          src=""
-          width="100%"
-          height="520"
-          title="Certificate PDF Preview">
-        </iframe>
+        <iframe id="certPreview" src="" width="100%" height="520" title="Certificate PDF Preview"></iframe>
       </div>
     </div>
   </div>
-
 </body>
-
 </html>
-

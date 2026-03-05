@@ -1,0 +1,51 @@
+.projects{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap:12px;
+}
+
+.project{
+  display:block;
+  padding:14px 14px;
+  border-radius:14px;
+  text-decoration:none;
+  color:var(--text);
+  border:1px solid rgba(96,165,250,.18);
+  background: rgba(11,18,32,.35);
+  transition: transform .15s ease, border-color .15s ease, background .15s ease;
+}
+
+.project:hover{
+  transform: translateY(-2px);
+  border-color: rgba(96,165,250,.45);
+  background: rgba(59,130,246,.12);
+}
+
+.project span{
+  display:block;
+  color:var(--muted);
+  font-size:13px;
+  margin-top:6px;
+}
+
+.skill-rotator{
+  display:inline-block;
+  min-height:20px;
+  white-space:nowrap;
+  opacity:.95;
+  transform:translateY(0);
+  transition:opacity .25s ease, transform .25s ease;
+}
+
+.skill-rotator.is-out{
+  opacity:0;
+  transform:translateY(6px);
+}
+
+.skill-rotator.is-in{
+  opacity:1;
+  transform:translateY(0);
+}
