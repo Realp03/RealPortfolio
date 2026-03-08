@@ -426,9 +426,7 @@ body.intro-lock {
   opacity: 1;
   visibility: visible;
   pointer-events: all;
-  transition:
-    opacity 0.75s ease,
-    visibility 0.75s ease;
+  transition: opacity 0.75s ease, visibility 0.75s ease, background 0.35s ease;
 }
 
 .intro-overlay.is-exiting {
@@ -504,10 +502,7 @@ body.intro-lock {
 #chatFab,
 #chatBox,
 #certModal {
-  transition:
-    opacity 0.8s ease,
-    transform 0.8s ease,
-    filter 0.8s ease;
+  transition: opacity 0.8s ease, transform 0.8s ease, filter 0.8s ease;
 }
 
 body.intro-stage .site-shell,
@@ -528,6 +523,30 @@ body.intro-done #certModal {
   transform: translateY(0) scale(1);
   filter: blur(0);
   pointer-events: auto;
+}
+
+body.light-mode .intro-overlay {
+  background:
+    radial-gradient(900px 500px at 20% 15%, rgba(59, 130, 246, 0.14), transparent 60%),
+    radial-gradient(800px 500px at 85% 30%, rgba(96, 165, 250, 0.1), transparent 60%),
+    linear-gradient(135deg, #f7fbff 0%, #edf5ff 45%, #dfeeff 100%);
+}
+
+body.light-mode .intro-logo {
+  color: #0f172a;
+  text-shadow: 0 0 20px rgba(59, 130, 246, 0.12);
+}
+
+body.light-mode .intro-logo-sub {
+  color: #2563eb;
+}
+
+body.light-mode .intro-tag {
+  color: rgba(30, 41, 59, 0.72);
+}
+
+body.light-mode .intro-logo-line {
+  background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.5), transparent);
 }
 
 @keyframes introLogoIn {
@@ -582,44 +601,47 @@ body.intro-done #certModal {
 }
 
 @media (max-width: 640px) {
-  .intro-inner {
-    gap: 14px;
+  .intro-overlay {
+    padding: 20px;
   }
 
-  .intro-logo-wrap {
+  .intro-inner {
     gap: 12px;
   }
 
-  .intro-logo-line {
-    max-width: 70px;
+  .intro-logo-wrap {
+    gap: 10px;
+  }
+
+  .intro-logo-main {
+    font-size: clamp(2rem, 9vw, 3.2rem);
+  }
+
+  .intro-logo-sub {
+    font-size: clamp(0.8rem, 4vw, 1.1rem);
   }
 
   .intro-tag {
-    letter-spacing: 0.24em;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.22em;
   }
-}
 
-body.light-mode .intro-overlay {
-  background:
-    radial-gradient(900px 500px at 20% 15%, rgba(59, 130, 246, 0.14), transparent 60%),
-    radial-gradient(800px 500px at 85% 30%, rgba(96, 165, 250, 0.1), transparent 60%),
-    linear-gradient(135deg, #f7fbff 0%, #edf5ff 45%, #dfeeff 100%);
-}
+  .intro-logo-line {
+    max-width: 60px;
+  }
 
-body.light-mode .intro-logo {
-  color: #0f172a;
-  text-shadow: 0 0 20px rgba(59, 130, 246, 0.12);
-}
+  body.light-mode .intro-overlay {
+    background:
+      radial-gradient(600px 300px at 30% 20%, rgba(59, 130, 246, 0.12), transparent 60%),
+      radial-gradient(500px 280px at 70% 40%, rgba(96, 165, 250, 0.08), transparent 60%),
+      linear-gradient(135deg, #f8fbff 0%, #edf4ff 50%, #e4f0ff 100%);
+  }
 
-body.light-mode .intro-logo-sub {
-  color: #2563eb;
-}
+  body.light-mode .intro-logo {
+    text-shadow: 0 0 14px rgba(59, 130, 246, 0.1);
+  }
 
-body.light-mode .intro-tag {
-  color: rgba(30, 41, 59, 0.72);
-}
-
-body.light-mode .intro-logo-line {
-  background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.5), transparent);
+  body.light-mode .intro-tag {
+    color: rgba(30, 41, 59, 0.6);
+  }
 }
