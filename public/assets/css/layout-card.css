@@ -1,0 +1,103 @@
+.intro-grid,
+.skills-layout {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.intro-card,
+.skills-panel {
+  position: relative;
+  overflow: hidden;
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 100%),
+    linear-gradient(180deg, var(--bg-elevated-2), var(--bg-elevated));
+  box-shadow: var(--shadow-card);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: var(--blur);
+  transition:
+    transform var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.intro-card::before,
+.skills-panel::before {
+  content: "";
+  position: absolute;
+  inset: auto auto -40px -30px;
+  width: 140px;
+  height: 140px;
+  border-radius: 999px;
+  background: rgba(103, 168, 255, 0.1);
+  filter: blur(30px);
+  pointer-events: none;
+}
+
+.intro-card:hover,
+.skills-panel:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-hover);
+}
+
+.intro-card--wide {
+  grid-column: span 2;
+  min-height: 210px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.intro-card h3,
+.skills-panel h3 {
+  margin: 0 0 12px;
+  color: var(--heading);
+  font-size: 1.15rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.intro-card p,
+.skills-panel p {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.intro-card--wide p {
+  max-width: 58ch;
+  font-size: clamp(1.02rem, 1.45vw, 1.14rem);
+  line-height: 1.9;
+}
+
+.skills-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-height: 100%;
+}
+
+.skills-section .section-heading,
+.intro-section .section-heading,
+.featured-section .section-heading,
+.certificates-section .section-heading,
+.contact-section .section-heading {
+  max-width: 760px;
+}
+
+body.light-mode .intro-card,
+body.light-mode .skills-panel {
+  background:
+    linear-gradient(180deg, rgba(59, 130, 246, 0.03), rgba(255, 255, 255, 0.82)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.76));
+}
+
+body.light-mode .intro-card::before,
+body.light-mode .skills-panel::before {
+  background: rgba(59, 130, 246, 0.1);
+}
+

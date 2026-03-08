@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Realp03 Portfolio</title>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon.png?v=5" />
+  <link rel="stylesheet" href="/assets/css/tokens.css?v=5" />
+  <link rel="stylesheet" href="/assets/css/base.css?v=5" />
+  <link rel="stylesheet" href="/assets/css/layout-card.css?v=5" />
+  <link rel="stylesheet" href="/assets/css/project.css?v=5" />
+  <link rel="stylesheet" href="/assets/css/featured-project.css?v=5" />
+  <link rel="stylesheet" href="/assets/css/contact.css?v=5" />
+  <link rel="stylesheet" href="/assets/css/chat.css?v=5" />
+  <link rel="stylesheet" href="/assets/css/certificates.css?v=5" />
+  <link rel="stylesheet" href="/assets/css/modal.css?v=5" />
+  <link rel="stylesheet" href="/assets/css/hero-typing.css?v=5" />
+  <link rel="stylesheet" href="/assets/css/guestbook.css?v=5" />
+  <link rel="stylesheet" href="/assets/css/responsiveness.css?v=5" />
+
+  <script type="module" src="/assets/js/main.js?v=5"></script>
+</head>
+
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <a href="#hero" class="brand">
+        <img src="/assets/icons/favicon.png" alt="Realp03 Logo" class="brand-logo" />
+      </a>
+
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#featured-projects">Projects</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#contact">Contact</a>
+        <a href="#guestbook">Feedback</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="nav-cta desktop-cta" href="/assets/docs/cv/Mark-Daryl-Pineda-CV.pdf" download>Download CV</a>
+
+        <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle theme">
+          <span class="theme-toggle__icon">◐</span>
+        </button>
+
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          type="button"
+          aria-label="Open menu"
+          aria-controls="mobileMenu"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="mobile-menu__inner">
+        <div class="mobile-menu__top">
+          <div class="mobile-menu__brand">Realp03</div>
+          <button id="menuClose" class="mobile-menu__close" type="button" aria-label="Close menu">✕</button>
+        </div>
+
+        <nav class="mobile-menu__nav" aria-label="Mobile navigation">
+          <a href="#hero">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#featured-projects">Projects</a>
+          <a href="#certificates">Certificates</a>
+          <a href="#contact">Contact</a>
+          <a href="#guestbook">Feedback</a>
+        </nav>
+
+        <div class="mobile-menu__actions">
+          <a class="nav-cta mobile-cta" href="/assets/docs/cv/Mark-Daryl-Pineda-CV.pdf" download>Download CV</a>
+        </div>
+      </div>
+    </div>
+
+    <main class="main-wrap">
+      <section class="hero-section reveal" id="hero">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            <span id="typingLine"></span>
+          </h1>
+
+          <p class="hero-text">
+            I create clean, responsive, and user-friendly websites while continuously improving my frontend development skills through real projects and hands-on learning.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#featured-projects" class="primary-btn">View Projects</a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-image-card">
+            <img class="profile-pic" src="/assets/img/Pogi-nobg.png" alt="Mark Daryl Pineda" />
+          </div>
+        </div>
+      </section>
+
+      <section class="intro-section reveal" id="about">
+        <div class="section-heading">
+          <p class="section-label">About Me</p>
+        </div>
+
+        <div class="intro-grid">
+          <div class="intro-card intro-card--wide">
+            <p>
+              I’m Mark Daryl Pineda, a developer who enjoys creating modern web experiences, experimenting with UI ideas, and turning concepts into functional personal and academic projects.
+            </p>
+          </div>
+
+          <div class="intro-card">
+            <h3>Projects</h3>
+            <p>Portfolio apps, gallery systems, resume builders, and interactive web tools.</p>
+          </div>
+
+          <div class="intro-card">
+            <h3>Focus</h3>
+            <p>Frontend development, responsive design, and practical user-centered interfaces.</p>
+          </div>
+
+          <div class="intro-card">
+            <h3>Learning</h3>
+            <p>Always improving through hands-on building, exploration, and real implementation.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="skills-section reveal" id="skills">
+        <div class="skills-layout">
+          <div class="skills-copy">
+            <div class="section-heading">
+              <p class="section-label">My Skills</p>
+            </div>
+          </div>
+
+          <div class="skills-orb-wrap">
+            <div class="skills-icons" id="skillsIcons">
+              <button
+                class="skill-orb"
+                type="button"
+                data-title="HTML"
+                data-rating="4"
+                data-code="<section>&#10;  <h1>Hello World</h1>&#10;</section>"
+              >
+                <img src="/assets/icons/html.png" alt="HTML" />
+                <span>HTML</span>
+              </button>
+
+              <button
+                class="skill-orb"
+                type="button"
+                data-title="CSS"
+                data-rating="3.5"
+                data-code=".card {&#10;  border-radius: 24px;&#10;  padding: 20px;&#10;}"
+              >
+                <img src="/assets/icons/css.png" alt="CSS" />
+                <span>CSS</span>
+              </button>
+
+              <button
+                class="skill-orb"
+                type="button"
+                data-title="JavaScript"
+                data-rating="2"
+                data-code="button.onclick = () => {&#10;  menu.classList.toggle('open')&#10;}"
+              >
+                <img src="/assets/icons/javascript.png" alt="JavaScript" />
+                <span>JavaScript</span>
+              </button>
+
+              <button
+                class="skill-orb"
+                type="button"
+                data-title="React"
+                data-rating="2"
+                data-code="export default function Hero() {&#10;  return <section>Hi</section>&#10;}"
+              >
+                <img src="/assets/icons/react.png" alt="React" />
+                <span>React</span>
+              </button>
+
+              <button
+                class="skill-orb"
+                type="button"
+                data-title="Tailwind CSS"
+                data-rating="2"
+                data-code="<div class='rounded-2xl p-6 bg-slate-900'></div>"
+              >
+                <img src="/assets/icons/tailwind.png" alt="Tailwind CSS" />
+                <span>Tailwind</span>
+              </button>
+
+              <button
+                class="skill-orb"
+                type="button"
+                data-title="PHP"
+                data-rating="2"
+                data-code="<?php&#10;echo 'Hello, Mark!';&#10;?>"
+              >
+                <img src="/assets/icons/php.png" alt="PHP" />
+                <span>PHP</span>
+              </button>
+
+              <button
+                class="skill-orb"
+                type="button"
+                data-title="MySQL"
+                data-rating="2"
+                data-code="SELECT * FROM projects&#10;ORDER BY created_at DESC;"
+              >
+                <img src="/assets/icons/mysql.png" alt="MySQL" />
+                <span>MySQL</span>
+              </button>
+
+              <button
+                class="skill-orb"
+                type="button"
+                data-title="Java"
+                data-rating="3"
+                data-code="public class Main {&#10;  public static void main(String[] args) {}&#10;}"
+              >
+                <img src="/assets/icons/java.png" alt="Java" />
+                <span>Java</span>
+              </button>
+
+              <button
+                class="skill-orb"
+                type="button"
+                data-title="VB.Net"
+                data-rating="2"
+                data-code="Module Program&#10;  Sub Main()&#10;  End Sub&#10;End Module"
+              >
+                <img src="/assets/icons/vbnet.png" alt="VB.Net" />
+                <span>VB.Net</span>
+              </button>
+
+              <div class="skill-thought" id="skillThought" aria-live="polite">
+                <div class="skill-thought__bubble bubble-big">
+                  <div class="skill-thought__label" id="skillThoughtTitle">Skill</div>
+                  <div class="skill-thought__code" id="skillThoughtCode"></div>
+                </div>
+                <div class="skill-thought__bubble bubble-mid"></div>
+                <div class="skill-thought__bubble bubble-small"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="featured-section reveal" id="featured-projects">
+        <div class="section-heading">
+          <p class="section-label">Featured Work</p>
+        </div>
+
+        <div class="product-grid">
+          <a class="product-card" href="https://reaplaylist.vercel.app" target="_blank" rel="noopener noreferrer">
+            <div class="product-img-wrap">
+              <img
+                src="https://mini.s-shot.ru/1200x750/PNG/1200/Z100/?https://reaplaylist.vercel.app"
+                onerror="this.onerror=null;this.src='/assets/img/reaplaylist.png';"
+                alt="ReaPlaylist Website Preview"
+                class="product-img"
+                loading="lazy"
+              />
+              <span class="product-badge">Live</span>
+            </div>
+
+            <div class="product-info">
+              <h3 class="product-title">ReaPlaylist</h3>
+              <p class="product-desc">Personal playlist website that reflects motivation, mood, and life energy through music.</p>
+
+              <div class="product-meta">
+                <span class="product-tag">React</span>
+                <span class="product-tag">Tailwind</span>
+                <span class="product-tag">Vite</span>
+              </div>
+
+              <div class="product-cta">
+                <span class="product-link">Listen Now →</span>
+              </div>
+            </div>
+          </a>
+
+          <a class="product-card" href="https://gallereal.42web.io/gallery.php" target="_blank" rel="noopener noreferrer">
+            <div class="product-img-wrap">
+              <img
+                src="https://mini.s-shot.ru/1200x750/PNG/1200/Z100/?https://gallereal.42web.io/gallery.php"
+                onerror="this.onerror=null;this.src='/assets/img/gallereal.png';"
+                alt="Gallereal Website Preview"
+                class="product-img"
+                loading="lazy"
+              />
+              <span class="product-badge">Live</span>
+            </div>
+
+            <div class="product-info">
+              <h3 class="product-title">Gallereal</h3>
+              <p class="product-desc">Dynamic gallery website with visitor submissions and admin validation before publishing.</p>
+
+              <div class="product-meta">
+                <span class="product-tag">PHP</span>
+                <span class="product-tag">MySQL</span>
+                <span class="product-tag">Tailwind</span>
+              </div>
+
+              <div class="product-cta">
+                <span class="product-link">View Website →</span>
+              </div>
+            </div>
+          </a>
+
+          <a class="product-card" href="https://realsumebuilder.vercel.app" target="_blank" rel="noopener noreferrer">
+            <div class="product-img-wrap">
+              <img
+                src="/assets/img/Resume.png"
+                onerror="this.onerror=null;this.src='/assets/img/Resume.png';"
+                alt="Resume Builder Website Preview"
+                class="product-img"
+                loading="lazy"
+              />
+              <span class="product-badge">Live</span>
+            </div>
+
+            <div class="product-info">
+              <h3 class="product-title">Resume Builder</h3>
+              <p class="product-desc">Resume builder with editable templates and PDF export for fast and polished resume creation.</p>
+
+              <div class="product-meta">
+                <span class="product-tag">React</span>
+                <span class="product-tag">Tailwind</span>
+                <span class="product-tag">PDF Export</span>
+              </div>
+
+              <div class="product-cta">
+                <span class="product-link">View Website →</span>
+              </div>
+            </div>
+          </a>
+
+          <a class="product-card" href="https://guess-the-impostor-game.vercel.app/" target="_blank" rel="noopener noreferrer">
+            <div class="product-img-wrap">
+              <img
+                src="/assets/img/guessgame.png"
+                alt="Guess The Impostor Game Preview"
+                class="product-img"
+                loading="lazy"
+              />
+              <span class="product-badge">Live</span>
+            </div>
+
+            <div class="product-info">
+              <h3 class="product-title">Guess The Impostor</h3>
+              <p class="product-desc">A one-device party game where players describe the secret word and uncover the impostor.</p>
+
+              <div class="product-meta">
+                <span class="product-tag">React</span>
+                <span class="product-tag">Vite</span>
+                <span class="product-tag">Mobile APK</span>
+              </div>
+
+              <div class="product-cta">
+                <span class="product-link">Play Now →</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section class="certificates-section reveal" id="certificates">
+        <div class="section-heading">
+          <p class="section-label">Certificates</p>
+        </div>
+
+        <h3 class="cert-group-title">Courses Certificates</h3>
+        <div class="cert-grid">
+          <button
+            class="cert-card"
+            data-title="Introduction to Cybersecurity"
+            data-pdf="/assets/docs/certs/Introduction_to_Cybersecurity_certificate_pinedamarkdaryl-gmail-com_fe173ab2-cafc-4dbf-b2c1-2dede27c746c (1).pdf"
+          >
+            <div class="cert-meta">
+              <span class="cert-title">Introduction to Cybersecurity</span>
+              <span class="cert-sub">Tap to open</span>
+            </div>
+          </button>
+
+          <button
+            class="cert-card"
+            data-title="CSS Essentials"
+            data-pdf="/assets/docs/certs/CSS_Essentials_certificate_pinedamarkdaryl-gmail-com_ea032f1b-c684-430b-91c5-4badcbadc655.pdf"
+          >
+            <div class="cert-meta">
+              <span class="cert-title">CSS Essentials</span>
+              <span class="cert-sub">Tap to open</span>
+            </div>
+          </button>
+
+          <button
+            class="cert-card"
+            data-title="Operating Systems Basics"
+            data-pdf="/assets/docs/certs/Operating_Systems_Basics_certificate_pinedamarkdaryl-gmail-com_6aeca8e9-7fea-4c6a-a597-5478b34ef25b.pdf"
+          >
+            <div class="cert-meta">
+              <span class="cert-title">Operating Systems Basics</span>
+              <span class="cert-sub">Tap to open</span>
+            </div>
+          </button>
+        </div>
+
+        <hr class="cert-divider" />
+
+        <h3 class="cert-group-title">Webinars / Seminars Certificates</h3>
+        <div class="cert-grid">
+          <button
+            class="cert-card"
+            data-title="FROM IDEA TO APP: DEMYSTIFYING WEB AND DIGITAL MARKETING"
+            data-pdf="/assets/docs/certs/Mark_Daryl_Pineda.pdf"
+          >
+            <div class="cert-meta">
+              <span class="cert-title">FROM IDEA TO APP: DEMYSTIFYING WEB AND DIGITAL MARKETING</span>
+              <span class="cert-sub">Tap to open</span>
+            </div>
+          </button>
+
+          <button
+            class="cert-card"
+            data-title="Empowerment Program for Women in Tech"
+            data-pdf="/assets/docs/certs/She++Certificate.pdf"
+          >
+            <div class="cert-meta">
+              <span class="cert-title">SHE++: Empowerment Program for Women in Tech</span>
+              <span class="cert-sub">Tap to open</span>
+            </div>
+          </button>
+        </div>
+      </section>
+
+      <section class="contact-section reveal" id="contact">
+        <div class="section-heading">
+          <p class="section-label">Contact</p>
+        </div>
+
+        <div class="contact">
+          <a href="mailto:pinedamarkdaryl@gmail.com" aria-label="Email">
+            <img class="email-icon" src="/assets/icons/email.png" alt="Email Me" />
+          </a>
+
+          <a href="https://web.facebook.com/TheReal2004" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <img class="email-icon" src="/assets/icons/FB.png" alt="Facebook" />
+          </a>
+
+          <a href="https://www.instagram.com/realp03/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <img class="email-icon" src="/assets/icons/insta.png" alt="Instagram" />
+          </a>
+        </div>
+      </section>
+
+      <section id="guestbook" class="guestbook-section reveal">
+        <div class="section-heading">
+          <p class="section-label">Feedback</p>
+        </div>
+
+        <div class="guestbook-shell">
+          <div class="guestbook-copy">
+            <h2 class="guestbook-title">Leave a Message</h2>
+            <p class="guestbook-sub">
+              Share a short message, feedback, or support. You can use your name or stay anonymous.
+            </p>
+          </div>
+
+          <form id="guestbookForm" class="guestbook-form">
+            <div class="guestbook-top">
+              <input
+                type="text"
+                name="name"
+                class="guestbook-input"
+                placeholder="Your name (optional)"
+              />
+
+              <label class="guestbook-check">
+                <input type="checkbox" name="anonymous" />
+                <span>Post as Anonymous</span>
+              </label>
+            </div>
+
+            <textarea
+              name="message"
+              class="guestbook-textarea"
+              placeholder="Write your message..."
+              required
+            ></textarea>
+
+            <div class="guestbook-actions">
+              <button type="submit" class="guestbook-btn">Send Message</button>
+            </div>
+          </form>
+
+          <div class="guestbook-roll-wrap">
+            <div id="guestbookMessages" class="guestbook-messages guestbook-roll-track"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div id="chatFab">💬</div>
+
+  <div id="chatBox" class="chat hidden">
+    <div class="chatHeader">
+      <div class="chatUser">
+        <div class="avatarWrap">
+          <img src="/assets/img/Pogi.jpg" class="chatAvatar" alt="Mark Avatar" />
+          <span id="botDot" class="statusDot offline"></span>
+        </div>
+        <div class="chatUserInfo">
+          <div class="chatName">Mark Daryl Pineda</div>
+          <div id="botLabel" class="chatStatus">Offline</div>
+        </div>
+      </div>
+      <button id="chatClose" type="button">✕</button>
+    </div>
+
+    <div id="chatMsgs" class="chatMsgs"></div>
+
+    <form id="chatForm" class="chatForm">
+      <input id="chatInput" placeholder="Ask me something..." autocomplete="off" />
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <div class="cert-modal" id="certModal" aria-hidden="true">
+    <div class="cert-modal__backdrop" data-close="true"></div>
+
+    <div class="cert-modal__panel" role="dialog" aria-modal="true" aria-labelledby="certModalTitle">
+      <div class="cert-modal__top">
+        <h3 id="certModalTitle">Certificate</h3>
+        <div class="cert-modal__actions">
+          <a id="certDownload" class="cert-btn" href="#" download>Download</a>
+          <button id="certClose" class="cert-btn cert-btn--ghost" type="button">Close</button>
+        </div>
+      </div>
+
+      <div class="cert-modal__content">
+        <iframe id="certPreview" src="" width="100%" height="520" title="Certificate PDF Preview"></iframe>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

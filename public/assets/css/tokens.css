@@ -1,0 +1,82 @@
+:root {
+  --radius-xs: 10px;
+  --radius-sm: 14px;
+  --radius-md: 18px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+
+  --shadow-soft: 0 18px 60px rgba(5, 15, 35, 0.22);
+  --shadow-card: 0 14px 40px rgba(7, 20, 45, 0.18);
+  --shadow-hover: 0 20px 50px rgba(10, 24, 52, 0.26);
+
+  --transition-fast: 0.22s ease;
+  --transition-base: 0.32s ease;
+  --transition-slow: 0.45s ease;
+
+  --container: 1180px;
+  --nav-h: 84px;
+}
+
+/* DARK MODE DEFAULT */
+body {
+  --bg:
+    radial-gradient(900px 540px at 12% 8%, rgba(96, 165, 250, 0.20), transparent 58%),
+    radial-gradient(760px 480px at 88% 16%, rgba(59, 130, 246, 0.16), transparent 56%),
+    linear-gradient(135deg, #081120 0%, #0b1830 42%, #102347 100%);
+
+  --bg-solid: #0b1730;
+  --bg-elevated: rgba(13, 28, 56, 0.72);
+  --bg-elevated-2: rgba(15, 34, 68, 0.82);
+  --bg-soft: rgba(255, 255, 255, 0.03);
+
+  --border: rgba(148, 184, 255, 0.14);
+  --border-strong: rgba(125, 170, 255, 0.26);
+
+  --text: #edf4ff;
+  --text-soft: #c9d8f2;
+  --text-muted: #96add2;
+
+  --heading: #f8fbff;
+  --accent: #67a8ff;
+  --accent-strong: #3b82f6;
+  --accent-soft: rgba(103, 168, 255, 0.14);
+
+  --btn-text: #ffffff;
+  --input-bg: rgba(255, 255, 255, 0.04);
+
+  --blur: blur(14px);
+}
+
+/* LIGHT MODE */
+body.light-mode {
+  --bg:
+    radial-gradient(900px 540px at 12% 8%, rgba(96, 165, 250, 0.18), transparent 58%),
+    radial-gradient(760px 480px at 88% 16%, rgba(59, 130, 246, 0.14), transparent 56%),
+    linear-gradient(135deg, #f3f8ff 0%, #eaf2ff 40%, #ddeaff 100%);
+
+  --bg-solid: #eef5ff;
+  --bg-elevated: rgba(255, 255, 255, 0.72);
+  --bg-elevated-2: rgba(255, 255, 255, 0.9);
+  --bg-soft: rgba(17, 37, 74, 0.03);
+
+  --border: rgba(59, 130, 246, 0.12);
+  --border-strong: rgba(59, 130, 246, 0.24);
+
+  --text: #10213f;
+  --text-soft: #294064;
+  --text-muted: #5e769c;
+
+  --heading: #07172f;
+  --accent: #3b82f6;
+  --accent-strong: #2563eb;
+  --accent-soft: rgba(59, 130, 246, 0.10);
+
+  --btn-text: #ffffff;
+  --input-bg: rgba(17, 37, 74, 0.04);
+
+  --shadow-soft: 0 18px 60px rgba(66, 106, 170, 0.12);
+  --shadow-card: 0 14px 40px rgba(66, 106, 170, 0.10);
+  --shadow-hover: 0 20px 50px rgba(66, 106, 170, 0.16);
+
+  --blur: blur(12px);
+}

@@ -1,0 +1,432 @@
+@media (max-width: 1180px) {
+  .site-nav {
+    gap: 2px;
+  }
+
+  .site-nav a {
+    padding: 10px 9px;
+    font-size: 0.84rem;
+  }
+
+  .nav-cta.desktop-cta {
+    min-height: 44px;
+    padding: 0 14px;
+    font-size: 0.82rem;
+  }
+
+  .section-heading h2 {
+    max-width: 18ch;
+  }
+
+  .skills-icons {
+    grid-template-columns: repeat(3, minmax(0, 100px));
+    gap: 18px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .site-shell {
+    width: min(100% - 24px, var(--container));
+    padding-top: 18px;
+  }
+
+  .site-header {
+    padding: 14px 16px;
+    gap: 12px;
+  }
+
+  .site-nav {
+    display: none !important;
+  }
+
+  .desktop-cta {
+    display: none !important;
+  }
+
+  .menu-toggle {
+    display: inline-flex !important;
+  }
+
+  .main-wrap {
+    gap: 88px;
+  }
+
+  .hero-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 26px;
+    padding: 18px 0 6px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    order: 1;
+  }
+
+  .hero-visual,
+  .hero-image-card,
+  .profile-pic {
+    display: none !important;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .section-heading h2 {
+    max-width: 18ch;
+  }
+
+  .intro-grid,
+  .skills-layout,
+  .product-grid,
+  .cert-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .intro-card--wide {
+    grid-column: span 1;
+    align-items: flex-start;
+  }
+
+  .skills-orb-wrap {
+    display: block;
+  }
+
+  .skills-icons {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    justify-content: start;
+    align-items: start;
+    padding-bottom: 180px;
+  }
+
+  .skill-orb {
+    width: 100%;
+    max-width: 110px;
+  }
+
+  .skill-thought {
+    width: 250px;
+  }
+
+  .bubble-big {
+    width: 100%;
+  }
+}
+
+@media (max-width: 820px) {
+  .guestbook-shell {
+    padding: 22px 18px;
+  }
+
+  .guestbook-top {
+    grid-template-columns: 1fr;
+    align-items: stretch;
+  }
+
+  .guestbook-check {
+    width: fit-content;
+    max-width: 100%;
+  }
+
+  .guestbook-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .site-shell {
+    width: min(100% - 18px, var(--container));
+    padding-top: 14px;
+    padding-bottom: 70px;
+  }
+
+  .site-header {
+    top: 12px;
+    min-height: 72px;
+    padding: 10px 12px;
+    border-radius: 24px;
+  }
+
+  .brand {
+    font-size: 0.96rem;
+  }
+
+  .brand::before {
+    width: 10px;
+    height: 10px;
+  }
+
+  .header-actions {
+    gap: 8px;
+  }
+
+  .theme-toggle,
+  .menu-toggle {
+    width: 46px;
+    height: 46px;
+  }
+
+  .menu-toggle span {
+    left: 12px;
+    width: 20px;
+  }
+
+  .menu-toggle span:nth-child(1) {
+    top: 14px;
+  }
+
+  .menu-toggle span:nth-child(2) {
+    top: 22px;
+  }
+
+  .menu-toggle span:nth-child(3) {
+    top: 30px;
+  }
+
+  .menu-toggle.is-open span:nth-child(1),
+  .menu-toggle.is-open span:nth-child(3) {
+    top: 22px;
+  }
+
+  .main-wrap {
+    gap: 76px;
+  }
+
+  .section-heading {
+    gap: 8px;
+    margin-bottom: 22px;
+  }
+
+  .section-heading h2 {
+    max-width: 100%;
+    font-size: clamp(1.6rem, 7vw, 2.2rem);
+  }
+
+  .hero-section {
+    gap: 20px;
+    padding-top: 4px;
+  }
+
+  .hero-content {
+    text-align: left;
+  }
+
+  .hero-kicker {
+    margin-bottom: 12px;
+    font-size: 0.76rem;
+    letter-spacing: 0.11em;
+  }
+
+  .hero-title {
+    font-size: clamp(2.1rem, 12vw, 3.5rem);
+    line-height: 1.02;
+  }
+
+  #typingLine {
+    white-space: normal;
+  }
+
+  .hero-text {
+    margin-top: 16px;
+    font-size: 0.98rem;
+    line-height: 1.75;
+  }
+
+  .hero-actions {
+    margin-top: 22px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+    min-height: 52px;
+  }
+
+  .mobile-menu {
+    padding: 10px;
+  }
+
+  .mobile-menu__inner {
+    width: 100%;
+    height: calc(100dvh - 20px);
+    padding: 16px;
+    border-radius: 24px;
+  }
+
+  .mobile-menu__nav a {
+    min-height: 54px;
+    font-size: 0.98rem;
+  }
+
+  .intro-grid,
+  .skills-layout {
+    gap: 16px;
+  }
+
+  .intro-card,
+  .skills-panel {
+    padding: 20px;
+    border-radius: 24px;
+  }
+
+  .contact-copy p {
+    font-size: 0.97rem;
+    line-height: 1.75;
+  }
+
+  .skills-icons {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    justify-content: stretch;
+    align-items: stretch;
+    padding-bottom: 0;
+  }
+
+  .skill-orb {
+    width: 100%;
+    max-width: 100%;
+    height: 88px;
+    border-radius: 22px;
+  }
+
+  .skill-orb img {
+    width: 38px;
+    height: 38px;
+  }
+
+  .skill-orb span {
+    font-size: 0.76rem;
+  }
+
+  .skills-soft-note {
+    margin-top: 14px;
+  }
+}
+
+@media (max-width: 640px) {
+  .guestbook-roll-wrap {
+    height: 220px;
+  }
+
+  .guestbook-roll-track.is-rolling {
+    animation-duration: 18s;
+  }
+}
+
+@media (max-width: 560px) {
+  .site-shell {
+    width: min(100% - 14px, var(--container));
+  }
+
+  .site-header {
+    border-radius: 20px;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 11vw, 3rem);
+  }
+
+  .hero-kicker::before {
+    width: 24px;
+  }
+
+  .mobile-menu__inner {
+    padding: 14px;
+  }
+
+  .mobile-menu__top {
+    gap: 10px;
+  }
+
+  .mobile-menu__brand {
+    font-size: 0.95rem;
+  }
+
+  .mobile-menu__close {
+    width: 42px;
+    height: 42px;
+  }
+
+  .skills-icons {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .skill-orb {
+    height: 82px;
+    border-radius: 18px;
+  }
+
+  .skill-orb img {
+    width: 34px;
+    height: 34px;
+  }
+
+  .skill-orb span {
+    font-size: 0.72rem;
+    max-width: 64px;
+  }
+
+  .guestbook-check {
+    width: 100%;
+    border-radius: 16px;
+    padding: 12px 14px;
+  }
+
+  .guestbook-form .guestbook-input,
+  .guestbook-form .guestbook-textarea {
+    border-radius: 16px;
+    padding: 13px 14px;
+  }
+}
+
+@media (max-width: 420px) {
+  .site-shell {
+    width: min(100% - 12px, var(--container));
+  }
+
+  .site-header {
+    padding: 9px 10px;
+    min-height: 68px;
+  }
+
+  .theme-toggle,
+  .menu-toggle {
+    width: 42px;
+    height: 42px;
+  }
+
+  .brand {
+    font-size: 0.92rem;
+  }
+
+  .hero-title {
+    font-size: clamp(1.85rem, 10.5vw, 2.7rem);
+  }
+
+  .hero-text {
+    font-size: 0.94rem;
+  }
+
+  .skills-icons {
+    gap: 10px;
+  }
+
+  .skill-orb {
+    height: 78px;
+    padding: 8px;
+  }
+
+  .skill-orb img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .skill-orb span {
+    font-size: 0.68rem;
+  }
+}

@@ -1,0 +1,382 @@
+.skills-orb-wrap {
+  display: block;
+}
+
+.skills-icons {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 110px));
+  gap: 22px;
+  justify-content: start;
+  align-items: start;
+  overflow: visible;
+  padding-bottom: 0;
+}
+
+.skill-thought-mobile-host {
+  display: none;
+}
+
+.skill-orb {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent 100%),
+    linear-gradient(180deg, var(--bg-elevated-2), var(--bg-elevated));
+  box-shadow: var(--shadow-card);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: var(--blur);
+  transition:
+    transform var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    background var(--transition-fast);
+}
+
+.skill-orb::before {
+  content: "";
+  position: absolute;
+  inset: auto auto -16px -14px;
+  width: 70px;
+  height: 70px;
+  border-radius: 999px;
+  background: rgba(103, 168, 255, 0.16);
+  filter: blur(20px);
+  opacity: 0;
+  transition:
+    opacity var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.skill-orb:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-hover);
+}
+
+.skill-orb:hover::before,
+.skill-orb.is-active::before {
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+.skill-orb img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  pointer-events: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.skill-orb span {
+  display: block;
+  max-width: 78px;
+  text-align: center;
+  color: var(--text-soft);
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.skill-orb:hover img {
+  animation: skillBuzz 0.22s linear 2;
+}
+
+.skill-orb.is-active {
+  transform: translateY(-4px) scale(1.03);
+  border-color: var(--accent);
+  background:
+    linear-gradient(180deg, rgba(103, 168, 255, 0.1), transparent 100%),
+    linear-gradient(180deg, var(--bg-elevated-2), var(--bg-elevated));
+}
+
+.skill-orb.is-active span {
+  color: var(--heading);
+}
+
+@keyframes skillBuzz {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  20% { transform: translate(-1px, 1px) rotate(-2deg); }
+  40% { transform: translate(1px, -1px) rotate(2deg); }
+  60% { transform: translate(-1px, 0) rotate(-1deg); }
+  80% { transform: translate(1px, 1px) rotate(1deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+.skill-thought {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 220px;
+  z-index: 50;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(6px) scale(0.96);
+  transition:
+    left var(--transition-base),
+    top var(--transition-base),
+    opacity var(--transition-base),
+    transform var(--transition-base);
+}
+
+.skill-thought.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.skill-thought__bubble {
+  display: block;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)),
+    linear-gradient(180deg, var(--bg-elevated-2), var(--bg-elevated));
+  border: 1px solid var(--border-strong);
+  box-shadow: var(--shadow-soft);
+}
+
+.bubble-big {
+  position: relative;
+  width: 100%;
+  min-height: unset;
+  padding: 12px 12px 10px;
+  border-radius: 20px;
+}
+
+.bubble-mid,
+.bubble-small {
+  position: absolute;
+  left: var(--tail-x, 50%);
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)),
+    linear-gradient(180deg, var(--bg-elevated-2), var(--bg-elevated));
+  border: 1px solid var(--border-strong);
+  box-shadow: var(--shadow-card);
+}
+
+.bubble-mid {
+  width: 18px;
+  height: 18px;
+  bottom: -10px;
+}
+
+.bubble-small {
+  width: 10px;
+  height: 10px;
+  bottom: -22px;
+}
+
+.skill-thought.is-below .bubble-mid {
+  top: -10px;
+  bottom: auto;
+}
+
+.skill-thought.is-below .bubble-small {
+  top: -22px;
+  bottom: auto;
+}
+
+.skill-thought__label {
+  margin-bottom: 6px;
+  color: var(--heading);
+  font-size: 0.84rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.sample-code code {
+  display: block;
+  color: #dbeafe;
+  font-family: "Fira Code", "Consolas", monospace;
+  font-size: 0.7rem;
+  line-height: 1.5;
+}
+
+.skill-thought__code {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.skill-thought__code code {
+  display: block;
+  color: #dbeafe;
+  font-family: "Fira Code", "Consolas", monospace;
+  font-size: 0.76rem;
+  line-height: 1.65;
+}
+
+.skills-soft-note {
+  margin-top: 18px;
+}
+
+.skills-soft-note p {
+  margin: 0;
+  color: var(--text-soft);
+  line-height: 1.8;
+}
+
+body.light-mode .skill-orb {
+  background:
+    linear-gradient(180deg, rgba(59, 130, 246, 0.04), rgba(255, 255, 255, 0.88)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.76));
+}
+
+body.light-mode .skill-thought__bubble,
+body.light-mode .bubble-mid,
+body.light-mode .bubble-small {
+  background:
+    linear-gradient(180deg, rgba(59, 130, 246, 0.04), rgba(255, 255, 255, 0.88)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.76));
+}
+
+body.light-mode .skill-thought__code code {
+  color: #17335f;
+}
+
+@media (max-width: 767px) {
+  .skill-thought-mobile-host {
+    display: none !important;
+  }
+
+  .skill-thought,
+  .skill-thought.is-visible {
+    display: none !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transform: none !important;
+  }
+
+  .bubble-mid,
+  .bubble-small {
+    display: none !important;
+  }
+
+  .skill-orb:hover img,
+  .skill-orb:active img {
+    animation: skillBuzz 0.22s linear 2;
+  }
+}
+
+.skills-section {
+  width: 100%;
+}
+
+.skills-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.skills-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.skills-copy .section-heading {
+  margin-bottom: 0;
+}
+
+.skills-copy .section-heading h2 {
+  max-width: 8ch;
+  font-size: clamp(1.9rem, 2.8vw, 2.8rem);
+  line-height: 1.08;
+}
+
+.skills-orb-wrap {
+  display: block;
+  width: 100%;
+}
+
+.skills-icons {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 110px));
+  gap: 22px;
+  justify-content: start;
+  align-items: start;
+  overflow: visible;
+  padding-bottom: 0;
+}
+
+.skills-soft-note {
+  margin-top: 8px;
+  max-width: 38ch;
+}
+
+.skills-soft-note p {
+  margin: 0;
+  color: var(--text-soft);
+  line-height: 1.8;
+}
+
+.rating-wrap {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 2px;
+  margin-bottom: 8px;
+}
+
+.star {
+  font-size: 15px;
+  line-height: 1;
+}
+
+.star.full {
+  color: #facc15;
+}
+
+.star.half {
+  color: #facc15;
+  opacity: 0.5;
+}
+
+.star.empty {
+  color: rgba(255,255,255,0.2);
+}
+
+.rating-number {
+  font-size: 0.75rem;
+  color: var(--text-soft);
+  margin-left: 6px;
+}
+
+.sample-code {
+  margin: 0;
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.22);
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* LIGHT MODE STAR COLORS */
+
+body.light-mode .star.full {
+  color: #111111; /* solid black */
+}
+
+body.light-mode .star.half {
+  color: #111111;
+  opacity: 0.5;
+}
+
+body.light-mode .star.empty {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+body.light-mode .rating-number {
+  color: #111111;
+}
