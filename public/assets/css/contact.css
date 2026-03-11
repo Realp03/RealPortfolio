@@ -1,53 +1,86 @@
-.contact{
-  display:flex;
-  align-items:center;
-  gap:22px;
-  padding-top:18px;
-  flex-wrap:wrap;
+.contact {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding-top: 18px;
+  flex-wrap: wrap;
 }
 
-.contact a{
-  width:72px;
-  height:72px;
-  border-radius:18px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:rgba(255,255,255,0.08);
-  border:1px solid rgba(96,165,250,0.25);
-  box-shadow:0 14px 35px rgba(0,0,0,0.28);
-  transition:transform .2s ease, border-color .2s ease, background .2s ease, box-shadow .2s ease;
-  text-decoration:none;
+.contact-link {
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(96, 165, 250, 0.25);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.28);
+  transition: transform .2s ease, border-color .2s ease, background .2s ease, box-shadow .2s ease;
+  text-decoration: none;
+  padding: 0;
+  appearance: none;
+  -webkit-appearance: none;
 }
 
-.contact a:hover{
-  transform:translateY(-6px);
-  border-color:rgba(96,165,250,0.6);
-  background:rgba(255,255,255,0.12);
-  box-shadow:0 20px 50px rgba(0,0,0,0.35);
+.contact-link:hover {
+  transform: translateY(-6px);
+  border-color: rgba(96, 165, 250, 0.6);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
 }
 
-.contact a:active{
-  transform:translateY(-2px) scale(0.96);
+.contact-link:active {
+  transform: translateY(-2px) scale(0.96);
 }
 
-.email-icon{
-  width:52px;
-  height:52px;
-  object-fit:contain;
-  display:block;
+.contact-link:focus-visible {
+  outline: none;
+  border-color: rgba(96, 165, 250, 0.7);
+  box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.14);
 }
 
-@media (max-width:520px){
-  .contact{
-    justify-content:center;
+.contact-mail-trigger {
+  cursor: pointer;
+}
+
+.contact-icon-img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  display: block;
+}
+
+.email-icon {
+  width: 38px;
+  height: 38px;
+}
+
+.github-icon {
+  filter: invert(1) brightness(1.2);
+}
+
+body.light-mode .github-icon {
+  filter: none;
+}
+
+@media (max-width: 520px) {
+  .contact {
+    justify-content: center;
   }
-  .contact a{
-    width:64px;
-    height:64px;
+
+  .contact-link {
+    width: 64px;
+    height: 64px;
   }
-  .email-icon{
-    width:30px;
-    height:30px;
+
+  .contact-icon-img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .email-icon {
+    width: 34px;
+    height: 34px;
   }
 }

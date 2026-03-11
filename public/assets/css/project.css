@@ -380,3 +380,42 @@ body.light-mode .star.empty {
 body.light-mode .rating-number {
   color: #111111;
 }
+
+.contact a img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.github-icon {
+  filter: invert(1) brightness(1.2);
+}
+
+body.light-mode .github-icon {
+  filter: none;
+}
+
+.skill-icon-mask {
+  width: 42px;
+  height: 42px;
+  display: block;
+  flex-shrink: 0;
+  background-color: #ffffff;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+}
+
+.drawio-icon {
+  background-color: #ffffff;
+  -webkit-mask-image: url("../icons/drawio.png");
+  mask-image: url("../icons/drawio.png");
+}
+
+body.light-mode .drawio-icon,
+body.light .drawio-icon {
+  background-color: #f59e0b;
+}

@@ -5,21 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Realp03 Portfolio</title>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon.png?v=5" />
-  <link rel="stylesheet" href="/assets/css/tokens.css?v=5" />
-  <link rel="stylesheet" href="/assets/css/base.css?v=9" />
-  <link rel="stylesheet" href="/assets/css/layout-card.css?v=5" />
-  <link rel="stylesheet" href="/assets/css/project.css?v=5" />
-  <link rel="stylesheet" href="/assets/css/featured-project.css?v=5" />
-  <link rel="stylesheet" href="/assets/css/contact.css?v=5" />
-  <link rel="stylesheet" href="/assets/css/chat.css?v=5" />
-  <link rel="stylesheet" href="/assets/css/certificates.css?v=5" />
-  <link rel="stylesheet" href="/assets/css/modal.css?v=5" />
-  <link rel="stylesheet" href="/assets/css/hero-typing.css?v=5" />
-  <link rel="stylesheet" href="/assets/css/guestbook.css?v=5" />
-  <link rel="stylesheet" href="/assets/css/responsiveness.css?v=5" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon.png?v=4" />
+  <link rel="stylesheet" href="./assets/css/tokens.css?v=3" />
+  <link rel="stylesheet" href="./assets/css/base.css?v=7" />
+  <link rel="stylesheet" href="./assets/css/layout-card.css?v=3" />
+  <link rel="stylesheet" href="./assets/css/project.css?v=3" />
+  <link rel="stylesheet" href="./assets/css/featured-project.css?v=3" />
+  <link rel="stylesheet" href="./assets/css/contact.css?v=4" />
+  <link rel="stylesheet" href="./assets/css/emailme.css?v=2" />
+  <link rel="stylesheet" href="./assets/css/chat.css?v=3" />
+  <link rel="stylesheet" href="./assets/css/certificates.css?v=3" />
+  <link rel="stylesheet" href="./assets/css/modal.css?v=3" />
+  <link rel="stylesheet" href="./assets/css/hero-typing.css?v=3" />
+  <link rel="stylesheet" href="./assets/css/guestbook.css?v=3" />
+  <link rel="stylesheet" href="./assets/css/responsiveness.css?v=4" />
+  <link rel="stylesheet" href="./assets/css/footer.css?v=1" />
 
-  <script type="module" src="/assets/js/main.js?v=7"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="module" src="./assets/js/main.js?v=7"></script>
 </head>
 
 <body>
@@ -43,7 +46,7 @@
   <div class="site-shell">
     <header class="site-header">
       <a href="#hero" class="brand">
-        <img src="/assets/icons/favicon.png" alt="Realp03 Logo" class="brand-logo" />
+        <img src="./assets/icons/favicon.png" alt="Realp03 Logo" class="brand-logo" />
       </a>
 
       <nav class="site-nav" aria-label="Primary navigation">
@@ -57,7 +60,7 @@
       </nav>
 
       <div class="header-actions">
-        <a class="nav-cta desktop-cta" href="/assets/docs/cv/Mark-Daryl-Pineda-CV.pdf" download>Download CV</a>
+        <a class="nav-cta desktop-cta" href="./assets/docs/cv/Mark-Daryl-Pineda-CV.pdf" download>Download CV</a>
 
         <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle theme">
           <span class="theme-toggle__icon">◐</span>
@@ -78,29 +81,6 @@
       </div>
     </header>
 
-    <div class="mobile-menu" id="mobileMenu">
-      <div class="mobile-menu__inner">
-        <div class="mobile-menu__top">
-          <div class="mobile-menu__brand">Realp03</div>
-          <button id="menuClose" class="mobile-menu__close" type="button" aria-label="Close menu">✕</button>
-        </div>
-
-        <nav class="mobile-menu__nav" aria-label="Mobile navigation">
-          <a href="#hero">Home</a>
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#featured-projects">Projects</a>
-          <a href="#certificates">Certificates</a>
-          <a href="#contact">Contact</a>
-          <a href="#guestbook">Feedback</a>
-        </nav>
-
-        <div class="mobile-menu__actions">
-          <a class="nav-cta mobile-cta" href="/assets/docs/cv/Mark-Daryl-Pineda-CV.pdf" download>Download CV</a>
-        </div>
-      </div>
-    </div>
-
     <main class="main-wrap">
       <section class="hero-section reveal" id="hero">
         <div class="hero-content">
@@ -119,7 +99,7 @@
 
         <div class="hero-visual">
           <div class="hero-image-card">
-            <img class="profile-pic" src="/assets/img/Pogi-nobg.png" alt="Mark Daryl Pineda" />
+            <img class="profile-pic" src="./assets/img/Pogi-nobg.png" alt="Mark Daryl Pineda" />
           </div>
         </div>
       </section>
@@ -170,7 +150,7 @@
                 data-rating="4"
                 data-code="<section>&#10;  <h1>Hello World</h1>&#10;</section>"
               >
-                <img src="/assets/icons/html.png" alt="HTML" />
+                <img src="./assets/icons/html.png" alt="HTML" />
                 <span>HTML</span>
               </button>
 
@@ -181,7 +161,7 @@
                 data-rating="3.5"
                 data-code=".card {&#10;  border-radius: 24px;&#10;  padding: 20px;&#10;}"
               >
-                <img src="/assets/icons/css.png" alt="CSS" />
+                <img src="./assets/icons/css.png" alt="CSS" />
                 <span>CSS</span>
               </button>
 
@@ -192,7 +172,7 @@
                 data-rating="2"
                 data-code="button.onclick = () => {&#10;  menu.classList.toggle('open')&#10;}"
               >
-                <img src="/assets/icons/javascript.png" alt="JavaScript" />
+                <img src="./assets/icons/javascript.png" alt="JavaScript" />
                 <span>JavaScript</span>
               </button>
 
@@ -203,7 +183,7 @@
                 data-rating="2"
                 data-code="export default function Hero() {&#10;  return <section>Hi</section>&#10;}"
               >
-                <img src="/assets/icons/react.png" alt="React" />
+                <img src="./assets/icons/react.png" alt="React" />
                 <span>React</span>
               </button>
 
@@ -214,7 +194,7 @@
                 data-rating="2"
                 data-code="<div class='rounded-2xl p-6 bg-slate-900'></div>"
               >
-                <img src="/assets/icons/tailwind.png" alt="Tailwind CSS" />
+                <img src="./assets/icons/tailwind.png" alt="Tailwind CSS" />
                 <span>Tailwind</span>
               </button>
 
@@ -225,7 +205,7 @@
                 data-rating="2"
                 data-code="<?php&#10;echo 'Hello, Mark!';&#10;?>"
               >
-                <img src="/assets/icons/php.png" alt="PHP" />
+                <img src="./assets/icons/php.png" alt="PHP" />
                 <span>PHP</span>
               </button>
 
@@ -236,7 +216,7 @@
                 data-rating="2"
                 data-code="SELECT * FROM projects&#10;ORDER BY created_at DESC;"
               >
-                <img src="/assets/icons/mysql.png" alt="MySQL" />
+                <img src="./assets/icons/mysql.png" alt="MySQL" />
                 <span>MySQL</span>
               </button>
 
@@ -247,7 +227,7 @@
                 data-rating="3"
                 data-code="public class Main {&#10;  public static void main(String[] args) {}&#10;}"
               >
-                <img src="/assets/icons/java.png" alt="Java" />
+                <img src="./assets/icons/java.png" alt="Java" />
                 <span>Java</span>
               </button>
 
@@ -258,8 +238,41 @@
                 data-rating="2"
                 data-code="Module Program&#10;  Sub Main()&#10;  End Sub&#10;End Module"
               >
-                <img src="/assets/icons/vbnet.png" alt="VB.Net" />
+                <img src="./assets/icons/vbnet.png" alt="VB.Net" />
                 <span>VB.Net</span>
+              </button>
+
+              <button
+                class="skill-orb"
+                type="button"
+                data-title="Figma"
+                data-rating="3"
+                data-code="Design System&#10;Wireframe&#10;Prototype"
+              >
+                <img src="./assets/icons/figma.png" alt="Figma" />
+                <span>Figma</span>
+              </button>
+
+              <button
+                class="skill-orb"
+                type="button"
+                data-title="GitHub"
+                data-rating="3"
+                data-code="git add .&#10;git commit -m 'update'&#10;git push origin main"
+              >
+                <img src="./assets/icons/github.png" alt="GitHub" />
+                <span>GitHub</span>
+              </button>
+
+              <button
+                class="skill-orb"
+                type="button"
+                data-title="Draw.io"
+                data-rating="4"
+                data-code="Flowchart&#10;System Diagram&#10;DFD / ERD / Architecture"
+              >
+                <span class="skill-icon-mask drawio-icon" aria-hidden="true"></span>
+                <span>Draw.io</span>
               </button>
 
               <div class="skill-thought" id="skillThought" aria-live="polite">
@@ -285,7 +298,7 @@
             <div class="product-img-wrap">
               <img
                 src="https://mini.s-shot.ru/1200x750/PNG/1200/Z100/?https://reaplaylist.vercel.app"
-                onerror="this.onerror=null;this.src='/assets/img/reaplaylist.png';"
+                onerror="this.onerror=null;this.src='./assets/img/reaplaylist.png';"
                 alt="ReaPlaylist Website Preview"
                 class="product-img"
                 loading="lazy"
@@ -313,7 +326,7 @@
             <div class="product-img-wrap">
               <img
                 src="https://mini.s-shot.ru/1200x750/PNG/1200/Z100/?https://gallereal.42web.io/gallery.php"
-                onerror="this.onerror=null;this.src='/assets/img/gallereal.png';"
+                onerror="this.onerror=null;this.src='./assets/img/gallereal.png';"
                 alt="Gallereal Website Preview"
                 class="product-img"
                 loading="lazy"
@@ -340,8 +353,8 @@
           <a class="product-card" href="https://realsumebuilder.vercel.app" target="_blank" rel="noopener noreferrer">
             <div class="product-img-wrap">
               <img
-                src="/assets/img/Resume.png"
-                onerror="this.onerror=null;this.src='/assets/img/Resume.png';"
+                src="./assets/img/Resume.png"
+                onerror="this.onerror=null;this.src='./assets/img/Resume.png';"
                 alt="Resume Builder Website Preview"
                 class="product-img"
                 loading="lazy"
@@ -368,7 +381,7 @@
           <a class="product-card" href="https://guess-the-impostor-game.vercel.app/" target="_blank" rel="noopener noreferrer">
             <div class="product-img-wrap">
               <img
-                src="/assets/img/guessgame.png"
+                src="./assets/img/guessgame.png"
                 alt="Guess The Impostor Game Preview"
                 class="product-img"
                 loading="lazy"
@@ -404,7 +417,7 @@
           <button
             class="cert-card"
             data-title="Introduction to Cybersecurity"
-            data-pdf="/assets/docs/certs/Introduction_to_Cybersecurity_certificate_pinedamarkdaryl-gmail-com_fe173ab2-cafc-4dbf-b2c1-2dede27c746c (1).pdf"
+            data-pdf="./assets/docs/certs/Introduction_to_Cybersecurity_certificate_pinedamarkdaryl-gmail-com_fe173ab2-cafc-4dbf-b2c1-2dede27c746c (1).pdf"
           >
             <div class="cert-meta">
               <span class="cert-title">Introduction to Cybersecurity</span>
@@ -415,7 +428,7 @@
           <button
             class="cert-card"
             data-title="CSS Essentials"
-            data-pdf="/assets/docs/certs/CSS_Essentials_certificate_pinedamarkdaryl-gmail-com_ea032f1b-c684-430b-91c5-4badcbadc655.pdf"
+            data-pdf="./assets/docs/certs/CSS_Essentials_certificate_pinedamarkdaryl-gmail-com_ea032f1b-c684-430b-91c5-4badcbadc655.pdf"
           >
             <div class="cert-meta">
               <span class="cert-title">CSS Essentials</span>
@@ -426,7 +439,7 @@
           <button
             class="cert-card"
             data-title="Operating Systems Basics"
-            data-pdf="/assets/docs/certs/Operating_Systems_Basics_certificate_pinedamarkdaryl-gmail-com_6aeca8e9-7fea-4c6a-a597-5478b34ef25b.pdf"
+            data-pdf="./assets/docs/certs/Operating_Systems_Basics_certificate_pinedamarkdaryl-gmail-com_6aeca8e9-7fea-4c6a-a597-5478b34ef25b.pdf"
           >
             <div class="cert-meta">
               <span class="cert-title">Operating Systems Basics</span>
@@ -442,7 +455,7 @@
           <button
             class="cert-card"
             data-title="FROM IDEA TO APP: DEMYSTIFYING WEB AND DIGITAL MARKETING"
-            data-pdf="/assets/docs/certs/Mark_Daryl_Pineda.pdf"
+            data-pdf="./assets/docs/certs/Mark_Daryl_Pineda.pdf"
           >
             <div class="cert-meta">
               <span class="cert-title">FROM IDEA TO APP: DEMYSTIFYING WEB AND DIGITAL MARKETING</span>
@@ -453,7 +466,7 @@
           <button
             class="cert-card"
             data-title="Empowerment Program for Women in Tech"
-            data-pdf="/assets/docs/certs/She++Certificate.pdf"
+            data-pdf="./assets/docs/certs/She++Certificate.pdf"
           >
             <div class="cert-meta">
               <span class="cert-title">SHE++: Empowerment Program for Women in Tech</span>
@@ -469,16 +482,20 @@
         </div>
 
         <div class="contact">
-          <a href="mailto:pinedamarkdaryl@gmail.com" aria-label="Email">
-            <img class="email-icon" src="/assets/icons/email.png" alt="Email Me" />
+          <button type="button" class="contact-link contact-mail-trigger" id="openEmailMe" aria-label="Email">
+            <img class="contact-icon-img email-icon" src="./assets/icons/email.png" alt="Email Me" />
+          </button>
+
+          <a class="contact-link" href="https://web.facebook.com/TheReal2004" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <img class="contact-icon-img" src="./assets/icons/FB.png" alt="Facebook" />
           </a>
 
-          <a href="https://web.facebook.com/TheReal2004" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-            <img class="email-icon" src="/assets/icons/FB.png" alt="Facebook" />
+          <a class="contact-link" href="https://www.instagram.com/realp03/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <img class="contact-icon-img" src="./assets/icons/insta.png" alt="Instagram" />
           </a>
 
-          <a href="https://www.instagram.com/realp03/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-            <img class="email-icon" src="/assets/icons/insta.png" alt="Instagram" />
+          <a class="contact-link" href="https://github.com/Realp03" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <img class="contact-icon-img github-icon" src="./assets/icons/github.png" alt="GitHub" />
           </a>
         </div>
       </section>
@@ -531,13 +548,58 @@
     </main>
   </div>
 
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo-wrap">
+        <img src="./assets/icons/favicon.png" alt="Realp03 Logo" class="footer-logo" />
+      </div>
+
+      <h2 class="footer-brand">
+        Realp<span>03</span>
+      </h2>
+
+      <p class="footer-text">
+        Frontend Developer focused on clean design, responsive layouts, and real project building.
+      </p>
+
+      <div class="footer-line"></div>
+
+      <p class="footer-copy">
+        © 2026 Realp03. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu__inner">
+      <div class="mobile-menu__top">
+        <div class="mobile-menu__brand">Realp03</div>
+        <button id="menuClose" class="mobile-menu__close" type="button" aria-label="Close menu">✕</button>
+      </div>
+
+      <nav class="mobile-menu__nav" aria-label="Mobile navigation">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#featured-projects">Projects</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#contact">Contact</a>
+        <a href="#guestbook">Feedback</a>
+      </nav>
+
+      <div class="mobile-menu__actions">
+        <a class="nav-cta mobile-cta" href="./assets/docs/cv/Mark-Daryl-Pineda-CV.pdf" download>Download CV</a>
+      </div>
+    </div>
+  </div>
+
   <div id="chatFab">💬</div>
 
   <div id="chatBox" class="chat hidden">
     <div class="chatHeader">
       <div class="chatUser">
         <div class="avatarWrap">
-          <img src="/assets/img/Pogi.jpg" class="chatAvatar" alt="Mark Avatar" />
+          <img src="./assets/img/Pogi.jpg" class="chatAvatar" alt="Mark Avatar" />
           <span id="botDot" class="statusDot offline"></span>
         </div>
         <div class="chatUserInfo">
@@ -571,6 +633,49 @@
       <div class="cert-modal__content">
         <iframe id="certPreview" src="" width="100%" height="520" title="Certificate PDF Preview"></iframe>
       </div>
+    </div>
+  </div>
+
+  <div class="emailme-modal" id="emailMeModal" aria-hidden="true">
+    <div class="emailme-backdrop" data-emailme-close="true"></div>
+
+    <div class="emailme-panel" role="dialog" aria-modal="true" aria-labelledby="emailMeTitle">
+      <div class="emailme-top">
+        <div>
+          <h3 id="emailMeTitle" class="emailme-title">Send me a message</h3>
+          <p class="emailme-sub">Write your details and your message will go directly to my email.</p>
+        </div>
+
+        <button type="button" class="emailme-close" id="closeEmailMe" aria-label="Close email form">
+          ✕
+        </button>
+      </div>
+
+      <form id="emailMeForm" class="emailme-form">
+        <input type="hidden" name="to_name" value="Mark Daryl Pineda" />
+        <input type="hidden" name="subject" value="New Portfolio Contact Message" />
+
+        <div class="emailme-field">
+          <label for="from_name">Name</label>
+          <input type="text" id="from_name" name="from_name" placeholder="Enter your name" required />
+        </div>
+
+        <div class="emailme-field">
+          <label for="reply_to">Email</label>
+          <input type="email" id="reply_to" name="reply_to" placeholder="Enter your email" required />
+        </div>
+
+        <div class="emailme-field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" placeholder="Type your message here..." required></textarea>
+        </div>
+
+        <div class="emailme-actions">
+          <button type="submit" class="emailme-send" id="emailMeSend">Send Message</button>
+        </div>
+
+        <p class="emailme-status" id="emailMeStatus"></p>
+      </form>
     </div>
   </div>
 </body>

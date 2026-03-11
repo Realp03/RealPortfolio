@@ -1,11 +1,12 @@
-import { initThemeToggle } from "./theme.js?v=5"
-import { initMobileMenu } from "./mobileMenu.js?v=5"
-import { initSkillsThought } from "./skillsThought.js?v=5"
-import { initHeroTyping } from "./heroTyping.js?v=5"
-import { initChatWidget } from "./chatWidget.js?v=5"
-import { initCertificateModal } from "./certificateModal.js?v=5"
-import { initGuestBook } from "./guestbook.js?v=5"
-import { initStartAnimation } from "./startAnimation.js?v=2"
+import { initThemeToggle } from "./theme.js?v=3"
+import { initMobileMenu } from "./mobileMenu.js?v=3"
+import { initSkillsThought } from "./skillsThought.js?v=3"
+import { initHeroTyping } from "./heroTyping.js?v=3"
+import { initChatWidget } from "./chatWidget.js?v=3"
+import { initCertificateModal } from "./certificateModal.js?v=3"
+import { initGuestBook } from "./guestbook.js?v=3"
+import { initStartAnimation } from "./startAnimation.js"
+import { initEmailMe } from "./emailMe.js"
 
 document.addEventListener("DOMContentLoaded", () => {
   initThemeToggle()
@@ -16,4 +17,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initChatWidget()
   initCertificateModal()
   initGuestBook()
+  initEmailMe()
 })

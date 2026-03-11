@@ -5,6 +5,8 @@ export function initMobileMenu() {
 
   if (!menuToggle || !mobileMenu) return
 
+  const menuLinks = mobileMenu.querySelectorAll("a")
+
   function closeMobileMenu() {
     mobileMenu.classList.remove("is-open")
     menuToggle.classList.remove("is-open")
@@ -17,18 +19,22 @@ export function initMobileMenu() {
     menuToggle.classList.add("is-open")
     document.body.classList.add("menu-open")
     menuToggle.setAttribute("aria-expanded", "true")
+    mobileMenu.scrollTop = 0
   }
 
   menuToggle.addEventListener("click", () => {
-    const isOpen = mobileMenu.classList.contains("is-open")
-    if (isOpen) {
+    if (mobileMenu.classList.contains("is-open")) {
       closeMobileMenu()
     } else {
       openMobileMenu()
     }
   })
 
-  mobileMenu.querySelectorAll("a").forEach((link) => {
+  if (menuClose) {
+    menuClose.addEventListener("click", closeMobileMenu)
+  }
+
+  menuLinks.forEach((link) => {
     link.addEventListener("click", closeMobileMenu)
   })
 
@@ -38,12 +44,14 @@ export function initMobileMenu() {
     }
   })
 
-  if (menuClose) {
-    menuClose.addEventListener("click", closeMobileMenu)
-  }
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && mobileMenu.classList.contains("is-open")) {
+      closeMobileMenu()
+    }
+  })
 
   window.addEventListener("resize", () => {
-    if (window.innerWidth > 1100) {
+    if (window.innerWidth > 1100 && mobileMenu.classList.contains("is-open")) {
       closeMobileMenu()
     }
   })
